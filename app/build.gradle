@@ -6,7 +6,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('D:/key/gitsample_jenk.jks')
+            storeFile file('gitsample_jenk.jks')
             storePassword "123456"
             keyAlias "vmoksha"
             keyPassword "keystore"

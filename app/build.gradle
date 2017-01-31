@@ -6,7 +6,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('jenkins_keystore')
+           /* storeFile file('vmoksha.keystore')*/
             storePassword "123456"
             keyAlias "vmoksha"
             keyPassword "keystore"
@@ -19,7 +19,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        signingConfig signingConfigs.release
+       /* signingConfig signingConfigs.release*/
     }
     buildTypes {
         debug {

@@ -33,15 +33,15 @@ android {
     }
     productFlavors {
         GitSigningDev {
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             resValue "string", "app_name", "GitSigningDev"
         }
         GitSigningTest {
-            signingConfig signingConfigs.release
+           /* signingConfig signingConfigs.release*/
             resValue "string", "app_name", "GitSigningTest"
         }
         GitSigningProd {
-            signingConfig signingConfigs.release
+           // signingConfig signingConfigs.release
             resValue "string", "app_name", "GitSigningProd"
         }
 

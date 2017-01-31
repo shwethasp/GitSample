@@ -19,6 +19,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        signingConfig signingConfigs.release
     }
     buildTypes {
         debug {
@@ -32,6 +33,7 @@ android {
     }
     productFlavors {
         GitSigningDev {
+            signingConfig signingConfigs.release
             /*resValue "string", "app_name", "GitSigningDev"*/
         }
         GitSigningTest {
@@ -39,6 +41,7 @@ android {
            /* resValue "string", "app_name", "GitSigningTest"*/
         }
         GitSigningProd {
+            signingConfig signingConfigs.release
            /* resValue "string", "app_name", "GitSigningProd"*/
         }
 

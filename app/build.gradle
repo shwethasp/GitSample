@@ -19,7 +19,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-
+        signingConfig signingConfigs.release
     }
     buildTypes {
         debug {
@@ -38,14 +38,15 @@ android {
             resValue "string", "app_name", "GitSigningDev"
         }
         GitSigningTest {
-           /* signingConfig signingConfigs.release*/
+            /* signingConfig signingConfigs.release*/
             resValue "string", "app_name", "GitSigningTest"
+            signingConfig signingConfigs.release
         }
         GitSigningProd {
-           // signingConfig signingConfigs.release
+            // signingConfig signingConfigs.release
             resValue "string", "app_name", "GitSigningProd"
+            signingConfig signingConfigs.release
         }
-
         applicationVariants.all { variant ->
             variant.outputs.each { output ->
                 def outputFile = output.outputFile

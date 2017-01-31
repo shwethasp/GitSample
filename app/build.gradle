@@ -6,7 +6,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('gitsample_jenk.jks')
+            storeFile file('vmoksha.keystore')
             storePassword "123456"
             keyAlias "vmoksha"
             keyPassword "keystore"
@@ -19,7 +19,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-       /* signingConfig signingConfigs.release*/
+
     }
     buildTypes {
         debug {
@@ -28,7 +28,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
             debuggable true
         }
     }
@@ -59,17 +58,7 @@ android {
         }
     }*/
 
-    productFlavors {
-        devFlavor {
-
-        }
-        mTestFlavor {
-
-        }
-        stagingFlavor {
-
-        }
-    }
+ 
 }
 
 dependencies {

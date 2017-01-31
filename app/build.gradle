@@ -6,7 +6,7 @@ android {
 
     signingConfigs {
         release {
-           /* storeFile file('vmoksha.keystore')*/
+            storeFile file('vmoksha.keystore')
             storePassword "123456"
             keyAlias "vmoksha"
             keyPassword "keystore"
@@ -32,18 +32,18 @@ android {
             debuggable true
         }
     }
-    productFlavors {
+  /*  productFlavors {
         GitSigningDev {
             signingConfig signingConfigs.release
-            /*resValue "string", "app_name", "GitSigningDev"*/
+            *//*resValue "string", "app_name", "GitSigningDev"*//*
         }
         GitSigningTest {
             signingConfig signingConfigs.release
-           /* resValue "string", "app_name", "GitSigningTest"*/
+           *//* resValue "string", "app_name", "GitSigningTest"*//*
         }
         GitSigningProd {
             signingConfig signingConfigs.release
-           /* resValue "string", "app_name", "GitSigningProd"*/
+           *//* resValue "string", "app_name", "GitSigningProd"*//*
         }
 
         applicationVariants.all { variant ->
@@ -56,6 +56,18 @@ android {
                     output.outputFile = new File(outputFile.parent, fileName)
                 }
             }
+        }
+    }*/
+
+    productFlavors {
+        devFlavor {
+
+        }
+        mTestFlavor {
+
+        }
+        stagingFlavor {
+
         }
     }
 }

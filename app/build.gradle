@@ -6,7 +6,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("vmoksha.keystore")
+            storeFile file('D:/key/jenkins_keystore.jks')
             storePassword "123456"
             keyAlias "vmoksha"
             keyPassword "keystore"
@@ -29,6 +29,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            debuggable true
         }
     }
     productFlavors {

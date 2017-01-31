@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    signingConfigs {
+        release {
+            storeFile file("vmoksha.keystore")
+            storePassword "123456"
+            keyAlias "vmoksha"
+            keyPassword "keystore"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.vmokshagroup.gitsample"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        GitSigningDev {
+            resValue "string", "app_name", "GitSigningDev"
+        }
+        GitSigningTest {
+            resValue "string", "app_name", "GitSigningTest"
+        }
+        GitSigningProd {
+            resValue "string", "app_name", "GitSigningProd"
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    // convention: v1-0_02192015_google.apk
+                    //def fileName = "v${versionName}".replace('.', "-") + "_" + getDate() + "_" + variant.productFlavors[0].name + ".apk"
+                    def fileName = variant.productFlavors[0].name + ".apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+}
